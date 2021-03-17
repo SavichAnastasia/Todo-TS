@@ -20,6 +20,10 @@ export default function App () {
     setTodos((prev) => prev.filter(todo => todo.id !== id));
   };
 
+  const editTodo = (id: string, text: string): void => {
+    setTodos((prev) => prev.map(todo => todo.id === id ? {...todo, text } : todo));
+  }
+
   return (
     <View style={styles.container}>
       <Header />
@@ -27,7 +31,7 @@ export default function App () {
       <FlatList
         data={todos}
         keyExtractor={todo => todo.id}
-        renderItem={({ item }) => <TodoItem removeTodo={removeTodo} todo={item} />}
+        renderItem={({ item }) => <TodoItem editTodo={editTodo} removeTodo={removeTodo} todo={item} />}
       />
     </View>
   );
