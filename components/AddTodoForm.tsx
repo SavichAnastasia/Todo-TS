@@ -1,11 +1,13 @@
 import React, { FC, useState } from 'react';
-import { View, TextInput, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
+import {
+  View, TextInput, StyleSheet, TouchableOpacity, Text, Alert,
+} from 'react-native';
 
 interface AddTodoFormProps {
   addTodo: (text: string) => void
 }
 
-export const AddTodoForm: FC<AddTodoFormProps> = ({ addTodo }) => {
+const AddTodoForm: FC<AddTodoFormProps> = ({ addTodo }: AddTodoFormProps) => {
   const [value, setValue] = useState<string>('');
 
   const handlePress = (): void => {
@@ -37,21 +39,23 @@ export const AddTodoForm: FC<AddTodoFormProps> = ({ addTodo }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginVertical: 20
+    marginVertical: 20,
   },
   input: {
     height: 40,
     width: 200,
     borderBottomWidth: 2,
-    borderColor: '#336699'
+    borderColor: '#336699',
   },
   button: {
     backgroundColor: '#336699',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
   buttonText: {
-    color: '#ffff'
-  }
+    color: '#ffff',
+  },
 });
+
+export default AddTodoForm;

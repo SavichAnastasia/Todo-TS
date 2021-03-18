@@ -1,13 +1,11 @@
 import React, { FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export const Header: FC = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>ToDo app</Text>
-    </View>
-  );
-};
+const Header: FC = () => (
+  <View style={styles.container}>
+    <Text style={styles.text}>ToDo app</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -15,9 +13,11 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   text: {
-    color: '#336699'
-  }
+    color: '#336699',
+  },
 });
+
+export default Header;
